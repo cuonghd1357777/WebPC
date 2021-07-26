@@ -1,0 +1,96 @@
+﻿
+@{
+    ViewBag.Title = "sanphamtheodanhmuc";
+    Layout = "~/Views/Shared/_LayoutPagesanpham.cshtml";
+}
+@using WEBPC.Models;
+@using PagedList.Mvc;
+@model PagedList.PagedList<sanpham>
+@Html.Action("leftdanhmuc", "WEBPC")
+<div class="col-sm-9 col-md-9 col-lg-9 col-xs-12">
+    <h2 class="text-center" style="
+    color: green;
+">
+        @ViewBag.tendanhmuc
+    </h2>
+    <div class="products" style="
+    text-align: center;
+
+">
+        <ul>
+            @{
+                int i = 0;
+            }
+            @foreach (var item in @Model)
+            {
+                i++;
+                if (i % 3 == 0)
+                {
+                    <li class="col-sm-4 col-md-4 col-lg-4 col-xs-6 hidden-xs">
+                        <div class="main-product">
+                            <div class="img-product">
+                                <a href="@Url.Action("chitietsanpham","WEBPC",new {id=item.masp })">   <img class="img-prd" src="~/hinh anh/@item.hinhanh" alt=@item.tensanpham></a>
+                            </div>
+                            <div class="content-product">
+                                <h3 class="content-product-h3"><a href="@Url.Action("chitietsanpham","WEBPC",new {id=item.masp })"> @item.tensanpham</a></h3>
+                                <div class="content-product-deltals">
+                                    <div class="price">
+                                        <span class="money">@Html.FormatValue(item.dongia, "{0:#,##0}")đ</span>
+                                    </div>
+                                    <p><a href="@Url.Action("themgiohang","GioHang",new {id=item.masp,Url=Request.Url.ToString() })" class="btn btn-warning2" role="button">Thêm giỏ hàng</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                }
+                else
+                {
+
+                    <li class="col-sm-4 col-md-4 col-lg-4 col-xs-6">
+                        <div class="main-product">
+                            <div class="img-product">
+                                <a href="@Url.Action("chitietsanpham","WEBPC",new {id=item.masp })">   <img class="img-prd" src="~/hinh anh/@item.hinhanh" alt=@item.tensanpham></a>
+                            </div>
+                            <div class="content-product">
+                                <h3 class="content-product-h3"><a href="@Url.Action("chitietsanpham","WEBPC",new {id=item.masp })"> @item.tensanpham</a></h3>
+                                <div class="content-product-deltals">
+                                    <div class="price">
+                                        <span class="money">@Html.FormatValue(item.dongia, "{0:#,##0}")đ</span>
+                                    </div>
+                                    <p><a href="@Url.Action("themgiohang","GioHang",new {id=item.masp,Url=Request.Url.ToString() })" class="btn btn-warning2" role="button">Thêm giỏ hàng</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                }
+            }
+
+        </ul>
+    </div>
+
+</div>
+<style>
+    .btn-warning2 {
+        color: #fff;
+        background-color: Highlight;
+    }
+
+        .btn-warning2:hover {
+            color: #fff;
+            background-color: burlywood;
+        }
+</style>
+Trang @(Model.PageCount<Model.PageNumber?0:Model.PageNumber)/@Model.PageCount
+<div class="menutrang">
+    @Html.PagedListPager(Model, page => Url.Action("sanphamtheodanhmuc", new {id=ViewBag.id,tendanhmuc= ViewBag.tendanhmuc, page = page}))
+</div>
+<style>
+    .menutrang {
+        display: inline;
+        text-align: center;
+    }
+</style>
+
+
+

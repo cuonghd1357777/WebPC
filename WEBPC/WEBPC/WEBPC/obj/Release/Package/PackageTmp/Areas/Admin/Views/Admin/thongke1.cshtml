@@ -1,0 +1,95 @@
+﻿
+@{
+    ViewBag.Title = "thongke1";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@using System.Text
+
+
+<script src="https://code.highcharts.com/highcharts.js"></script>
+
+@model  IEnumerable<WEBPC.Areas.Admin.Models.groupin>
+@{
+    ViewBag.Title = "thongke1";
+
+}
+@if (Session["taikhoankh"] == null)
+{
+    @Html.Action("Login", "Home")
+}
+else if (Session["taikhoankh"] != null)
+{
+   using (Html.BeginForm("thongke1", "Admin"))
+    {
+        <input type="date" name="ngaylap" value="@ViewBag.ngaylap" />
+
+        <input style="margin-left:50px;" type="date" name="ngaylapcuoi" value="@ViewBag.ngaylapcuoi" />
+        <input style="margin-left:50px;" type="submit" value="Thống kê" class="btn btn-success" role="button" />
+        <div style="float:right;">
+            <div style="text-align:center;">Loại biểu đồ: </div>
+            @Html.DropDownList("loaibieudo")
+        </div>
+   }
+}
+
+    @{
+        StringBuilder s = new StringBuilder();
+        StringBuilder b = new StringBuilder();
+        int count = 0;
+    }
+
+    @{
+        if (Model != null)
+        {
+            foreach (var item in Model)
+            {
+                s.Append(item.date.ToString("dd/MM/yyyy") + " ");
+
+                b.Append(Convert.ToInt32(item.Count));
+                count += 1;
+            }
+
+
+            <div style="font-size:20px;">Tổng đơn hàng: @count</div>
+
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+            <canvas id="myChart">
+                <script>
+                    Highcharts.chart('chart1', {
+                        title: {
+                            text: 'Biểu đồ đường thời gian youtube của 200 sinh vien',
+                        },
+                        xAxis: {
+
+                        },
+                        yAxis: {
+                            title: {
+                                text: 'Thời game(hour)'
+                            },
+                            plotLines: [{
+                                value: 0,
+                                width: 1,
+                                color: '#808080'
+                            }]
+                        },
+                        tooltip: {
+                            valueSuffix: '°C'
+                        },
+                        legend: {
+                            layout: 'vertical',
+                            align: 'right',
+                            verticalAlign: 'middle',
+                            borderWidth: 0
+                        },
+                        series: [{
+                            data: arr
+                        }]
+
+                    });
+                </script>
+            </canvas>
+        }
+    }
+
+

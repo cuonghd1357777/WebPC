@@ -1,0 +1,85 @@
+﻿@model WEBPC.Models.donhang
+
+@{
+    ViewBag.Title = "capnhatdh";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>CẬP NHẬT ĐƠN HÀNG</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+      
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.madonhang)
+        @Html.HiddenFor(model => model.makh)
+        @Html.HiddenFor(model => model.ngaylap)
+        @Html.HiddenFor(model => model.tongtien)
+
+        <div class="form-group">
+            @Html.Label("Mã khách hàng", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+               <div class="form-control">@Model.makh</div>
+                @Html.ValidationMessageFor(model => model.makh, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Ngày lập", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <div class="form-control">@Model.ngaylap</div>
+                @Html.ValidationMessageFor(model => model.makh, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Tình trạng", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("ttrang")
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Ngày giao hàng", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <input name="ngaygiaohang" type="datetime" value="@ViewBag.ngay" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Hình thức thanh toán", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("httt")
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Hình thức giao hàng", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("htgh")
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Tổng tiền", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <div class="form-control">@Html.FormatValue(Model.tongtien,"{0:0,##0}") đ</div>
+                @Html.ValidationMessageFor(model => model.tongtien, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Lưu" class="btn btn-success" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Quay về trang quản lý đơn hàng", "donhang")
+</div>

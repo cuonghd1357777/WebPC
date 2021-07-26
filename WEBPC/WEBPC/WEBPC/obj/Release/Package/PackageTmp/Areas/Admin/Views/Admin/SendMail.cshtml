@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewBag.Title = "SendMail";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+
+<h3>Trả lời khách hàng @ViewBag.tenkh</h3>
+@using (Html.BeginForm("SendMail", "Admin", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+{
+    <div style="margin-bottom:20px;" >
+
+        <div>Email người gửi:</div>
+        <input name="From" type="email" style="width:300px;" required />
+        <div>Email khách hàng:</div>
+        <input name="To" type="email" style="width:300px;" value="@ViewBag.emailgui" required />
+        <div>Chủ đề:</div>
+        <input name="Subject" type="text" style="width:300px;" />
+        <div>Nội dung:</div>
+        <textarea name="Notes" rows="10" style="width:300px;"></textarea>
+        <div>Gửi file:</div>
+        <input name="file1" type="file"  />
+
+        <hr />
+        <input type="submit" value="Gửi" class="btn btn-success" />
+       
+
+    </div>
+}
+    @Html.ActionLink("Quay về trang liên hệ", "lienhe")
+
+

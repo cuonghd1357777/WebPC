@@ -1,0 +1,136 @@
+﻿@model IEnumerable<WEBPC.Models.chitietdonhang>
+
+@{
+    ViewBag.Title = "Detailsdh";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2 style="text-align:center;">CHI TIẾT ĐƠN HÀNG</h2>
+<h4>Mã đơn hàng:  @ViewBag.hienthi</h4>
+
+@using (Html.BeginForm("Detailsdh", "Admin", FormMethod.Post))
+{
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayName("STT")
+            </th>
+            <th>
+                @Html.DisplayName("Mã sản phẩm")
+            </th>
+            <th>
+                @Html.DisplayName("Tên sản phẩm")
+            </th>
+            <th>
+                @Html.DisplayName("Hình ảnh")
+            </th>
+            <th>
+                @Html.DisplayName("Số lượng")
+            </th>
+            <th>
+                @Html.DisplayName("Đơn giá")
+            </th>
+            <th>
+                @Html.DisplayName("Thành tiền")
+            </th>
+            <th></th>
+        </tr>
+        @{
+            int i = 0;
+        }
+
+        @foreach (var item in Model)
+        {
+            i = i + 1;
+
+
+
+            <tr>
+
+                <td>
+
+                    @i
+
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.masp)
+                </td>
+                <td>
+                    <div style="max-width:250px;"> @Html.DisplayFor(modelItem => item.sanpham.tensanpham)</div>
+                </td>
+                <td>
+                    <img style="max-height:100px;" src="~/hinh anh/@item.sanpham.hinhanh">
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.soluong)
+                </td>
+                <td>
+                    @Html.FormatValue(item.dongia, "{0:0,##0}") đ
+                </td>
+                <td>
+                    @Html.FormatValue(item.thanhtien, "{0:0,##0}") đ
+                </td>
+
+
+            </tr>
+
+
+        }
+
+    </table>
+    <div  >
+        <h4 style="text-align:center;color:brown;font-weight:bold;">THÔNG TIN KHÁCH HÀNG</h4>
+        
+        <dl style="margin:auto;width:400px;" class="dl-horizontal">
+            <dt>
+                @Html.DisplayName("Họ tên")
+            </dt>
+
+            <dd>
+                @ViewBag.hoten
+            </dd>
+            <dt>
+                @Html.DisplayName("Địa chỉ")
+            </dt>
+
+            <dd>
+                @ViewBag.diachi
+            </dd>
+            <dt>
+                @Html.DisplayName("Số điện thoại")
+            </dt>
+
+            <dd>
+                @ViewBag.sodienthoai
+            </dd>
+            <dt>
+                @Html.DisplayName("Email")
+            </dt>
+
+            <dd>
+                @ViewBag.email
+            </dd>
+            <dt>
+                @Html.DisplayName("Ngày đặt")
+            </dt>
+
+            <dd>
+                @ViewBag.ngaydat
+            </dd>
+            <dt>
+                @Html.DisplayName("Ngày giao")
+            </dt>
+
+            <dd>
+                @ViewBag.ngaygiao
+            </dd>
+
+        </dl>
+    </div>
+    <input type="submit" value="Xóa đơn hàng" class="btn btn-danger" role="button" />
+    <div style="margin-top:50px;">
+        @Html.ActionLink("Quay về trang quản lý đơn hàng", "donhang")
+
+    </div>
+
+}

@@ -1,0 +1,50 @@
+﻿
+@{
+    Layout = null;
+}
+<style>
+    a {
+        color: #337ab7;
+        text-decoration: none;
+    }
+</style>
+<div style="height:450px" ;>
+    @using (@Html.BeginForm("Login", "Home", FormMethod.Post))
+    {
+
+        <center>
+            <table align="center">
+                <tr>
+                    <td colspan="2" align="center"><h2 style="align-items:center;font-size:30px;">Đăng nhập Admin</h2></td>
+                </tr>
+                <tr style="
+    height: 30px;
+    margin-top: 10px;">
+                    <td>Tên đăng nhập: </td>
+                    <td>  @Html.TextBox("txtdangnhap")</td>
+                </tr>
+                <tr style="
+    height: 30px;
+    margin-top: 10px;">
+                    <td>
+                        Mật khẩu:
+                    </td>
+                    <td>  @Html.Password("txtmatkhau")</td>
+                </tr>
+                <tr style="margin-top:10px">
+                    <td align="center">
+                       
+                    </td>
+                    <td >
+                        <input type="submit" id="btndangnhap" value="Đăng nhập" />
+                    </td>
+                </tr>
+
+            </table>
+            <label for="error" style="
+    color: red;
+    margin-top: 10px;
+">@ViewBag.error </label>
+</center>
+}
+</div>

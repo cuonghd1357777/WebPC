@@ -1,0 +1,146 @@
+﻿@using WEBPC.Models;
+@using PagedList.Mvc;
+
+@model PagedList.PagedList<sanpham>
+
+@using System.Text;
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+@if(Session["taikhoankh"] == null){
+    @Html.Action("Login", "Home")
+}else if (Session["taikhoankh"] != null) {
+    using (Html.BeginForm("Index", "Admin"))
+    {
+<div>
+    <div>Loại sản phẩm: </div>
+    @Html.DropDownList("loaidanhmuc")
+    <input style="margin-left:20px;" type="submit" value="Bộ lọc" role="button" class="btn btn-success" />
+
+    <input style="float:right;" type="date" name="ngaylapcuoi" value="@ViewBag.ngaylapcuoi" />
+    <input style="float:right;" type="date" name="ngaylap" value="@ViewBag.ngaylap" />
+    <div class="dropdown" style="float:right;margin-right:30px;">
+        <button class="btn btn success" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">Sắp xếp<span class="caret"></span></button>
+        <ul class="dropdown-menu">
+            <li><a href="@Url.Action("Index", "Admin", new { @sapxep = "1" })">Mã sản phẩm</a> </li>
+            <li role="separator" class="divider"></li>
+            <li><a href="@Url.Action("Index", "Admin", new { @sapxep = "2" })">Ngày cập nhật tăng dần</a> </li>
+            <li role="separator" class="divider"></li>
+            <li><a href="@Url.Action("Index", "Admin", new { @sapxep = "3" })">Ngày cập nhật giảm dần</a> </li>
+            <li role="separator" class="divider"></li>
+            <li><a href="@Url.Action("Index", "Admin", new { @sapxep = "4" })">Giá bán tăng dần</a> </li>
+            <li role="separator" class="divider"></li>
+            <li><a href="@Url.Action("Index", "Admin", new { @sapxep = "5" })">Giá bán giảm dần</a> </li>
+
+
+
+        </ul>
+    </div>
+    <div style="float:left; margin-top:10px;">
+        <input type="text" placeholder="Tìm kiếm.." id="myInput" name="ngaytimkiem" />
+        <input type="submit" value="Tìm kiếm" class="btn btn-default" role="button" />
+    </div>
+
+
+</div>
+}
+
+<a style="float:right;margin-top:20px;margin-left:20px;margin-bottom:10px;" href="@Url.Action("xemhetsp")" class="btn btn-warning" role="button">Xem toàn bộ sản phẩm</a>
+
+@helper Truncate(string s, int length)
+{
+    if (s.Length < length)
+    {
+        @s;
+    }
+    else
+    {
+        @s.Substring(0, length)<text>...</text>
+    }
+}
+
+
+<p>
+    <a style="float:right;margin-top:20px;" href="@Url.Action("Create", "Admin")" class="btn btn-primary" role="button">Thêm sản phẩm</a>
+</p>
+<div style="margin-top:70px;">
+    <table class="table">
+        <tr>
+            <th>
+                Tên sản phẩm
+            </th>
+            <th>
+                Hình ảnh
+            </th>
+            <th>
+                Mô tả
+            </th>
+            <th>
+                Đơn giá
+            </th>
+            <th>
+                Số lượng
+            </th>
+
+
+            <th>
+                Ngày cập nhật
+            </th>
+            <th>
+                Bảo hành
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <div style="max-width:200px;">@item.tensanpham</div>
+                </td>
+                <td>
+                    <img style="height:100px;" src="~/hinh anh/@item.hinhanh" />
+                </td>
+                <td>
+                    <div style="max-width:280px;">@Html.Raw(@Truncate(item.mota, 100).ToString())</div>
+                </td>
+                <td>
+                    @Html.FormatValue(item.dongia, "{0:#,##0}") VNĐ
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.soluong)
+                </td>
+                <td>
+                    @Html.FormatValue(item.ngaycapnhat, "{0:dd/MM/yyyy}")
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.baohanh)
+                </td>
+                <td>
+
+                    <a href="@Url.Action("Edit", new { id = item.masp })" class="btn btn-warning" role="button">Sửa</a>
+                    <a href="@Url.Action("Details", new { id = item.masp })" class="btn btn-success" role="button">Chi tiết</a>
+                    <a href="@Url.Action("Delete", new { id = item.masp })" class="btn btn-danger" role="button">Xóa</a>
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
+}
+
+        Trang @(Model.PageCount<Model.PageNumber?0:Model.PageNumber)/@Model.PageCount
+        <div class="menutrang">
+
+            @Html.PagedListPager(Model, page => Url.Action("Index", new { page = page,chuoi=ViewBag.a,ngayg=ViewBag.ngaygiao,ngayc=ViewBag.ngaygiaocuoi,ldm=ViewBag.ldm }))
+
+        </div>
+
+        <style>
+            .menutrang {
+                display: inline;
+                text-align: center;
+            }
+        </style>
+

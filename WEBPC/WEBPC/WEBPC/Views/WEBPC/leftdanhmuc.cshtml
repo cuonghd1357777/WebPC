@@ -1,0 +1,21 @@
+﻿@model IEnumerable<WEBPC.Models.danhmucsanpham>
+<div class="col-sm-3 col-md-3 col-lg-3 col-xs-12">
+    <div class="leftcon" style="
+    width: 100%;
+">
+        <div class="box1">Danh mục sản phẩm</div>
+        <ul class="leftmenu">
+           @foreach(var item in Model) 
+           { 
+            <li class="no"><a href="@Url.Action("sanphamtheodanhmuc","WEBPC",new { id=item.madm,@tendanhmuc=item.tendanhmuc})">@item.tendanhmuc</a></li>
+           }
+           
+
+        </ul>
+
+
+
+
+
+    </div>
+</div>

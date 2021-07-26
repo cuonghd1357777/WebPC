@@ -1,0 +1,75 @@
+﻿@model IEnumerable<WEBPC.Areas.Admin.Models.groupin>
+
+@{
+    ViewBag.Title = "thongkesp1";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2 style="text-align:center;color:red;">THỐNG KÊ SẢN PHẨM ĐÃ BÁN</h2>
+@if (Session["taikhoankh"] == null)
+{
+    @Html.Action("Login", "Home")
+}
+else if (Session["taikhoankh"] != null)
+{
+    using (Html.BeginForm("thongkesp1", "Admin"))
+    {
+        <div>
+
+
+
+
+            <div style="float:left; margin-top:10px;">
+                <input type="text" placeholder="Tìm kiếm.." id="myInput" name="ngaytimkiem" value="@ViewBag.timkiem" />
+                <input type="submit" value="Tìm kiếm" class="btn btn-default" role="button" />
+            </div>
+
+        </div>
+        <a style="float:right;margin-top:20px;margin-bottom:10px;" href="@Url.Action("xemhetsptk")" class="btn btn-primary" role="button">Xem toàn bộ sản phẩm</a>
+
+    }
+
+    <table class="table">
+        <tr>
+
+            <th>
+                @Html.DisplayName("Tên sản phẩm")
+            </th>
+            <th>
+                @Html.DisplayName("Số lượng")
+            </th>
+            <th>
+                @Html.DisplayName("Đơn giá")
+            </th>
+
+            <th>
+                @Html.DisplayName("Thành tiền")
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+
+                <td>
+                    <a href="@Url.Action("Detailssptk", "Admin", new { id = item.Id })">@item.Name</a>
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Count)
+                </td>
+
+                <td>
+                    @string.Format("{0:#,##0}", item.dongia) VNĐ
+                </td>
+                <td>
+                    @string.Format("{0:#,##0}", item.Sum) VNĐ
+                </td>
+                <td>
+                </td>
+            </tr>
+        }
+
+    </table>
+}

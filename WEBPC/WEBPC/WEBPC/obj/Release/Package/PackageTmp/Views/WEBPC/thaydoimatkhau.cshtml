@@ -1,0 +1,50 @@
+﻿
+@{
+    ViewBag.Title = "thaydoimatkhau";
+    Layout = "~/Views/Shared/_LayoutIndex.cshtml";
+}
+
+<div style="height:450px" ;>
+    @using (@Html.BeginForm())
+    {
+
+        <center>
+            <table align="center">
+                <tr>
+                    <td colspan="2" align="center"><h2 style="align-items:center">Thay đổi mật khẩu</h2></td>
+                </tr>
+                <tr style="
+    height: 30px;
+    margin-top: 10px;">
+                    <td>Nhập mật khẩu mới: </td>
+                    <td>  @Html.Password("txtmatkhaucu")</td>
+
+                </tr>
+                <tr style="
+    height: 30px;
+    margin-top: 10px;">
+                    <td>
+                        Nhập lại mật khẩu mới:
+                    </td>
+                    <td>  @Html.Password("txtmatkhaumoi")</td>
+
+                </tr>
+                <tr style="margin-top:10px">
+                    <td align="center">
+                    </td>
+                    <td align="center">
+                        <input type="submit" class="btn btn-success" role="button" id="btndangnhap" value="Cập nhật" />
+                    </td>
+                </tr>
+
+            </table>
+            <label for="error" style="
+    color: red;
+    margin-top: 10px;
+">@ViewBag.error </label>
+</center>
+<div style="text-align:center;">@Html.ActionLink("Quay về trang cập nhật thông tin", "Editkh", new { id = ViewBag.makh })</div>
+}
+</div>
+
+

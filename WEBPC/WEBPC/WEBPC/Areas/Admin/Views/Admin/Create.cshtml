@@ -1,0 +1,92 @@
+﻿@model WEBPC.Models.sanpham
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+
+@using (Html.BeginForm("Create", "Admin", FormMethod.Post, new { @enctype = "multipart/form-data" })) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Thêm mới sản phẩm</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.Label("Tên sản phẩm", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <input type="text" value="@ViewBag.tensanpham" name="tensanpham" size="80" />
+               
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.Label("Mô tả", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+               <textarea name="mota" rows="10" style="width:300px;">@ViewBag.mota</textarea>
+               
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.Label("Hình ảnh", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+               <input name="fFileUpload" type="file" />
+                @ViewBag.thongbao
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.Label("Đơn giá", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <input type="number" min="1" required name="dongia" value="@ViewBag.dongia" />
+            </div>
+        </div>
+         <div class="form-group">
+            @Html.Label("Số lượng", htmlAttributes: new { @class = "control-label col-md-2" })
+             <div class="col-md-10">
+                 <input type="number" min="1" required name="soluong" value="@ViewBag.soluong" />
+
+             </div>
+        </div>
+        <div class="form-group">
+            @Html.Label("Ngày cập nhật", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <input name="ngaycapnhat" type="date"/>
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.Label("Bảo hành", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <input name="baohanh" type="text" value="@ViewBag.baohanh"/>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Danh mục sản phẩm", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+               @Html.DropDownList("MaDM")
+            </div>
+        </div>
+
+        
+
+       
+
+        
+
+        
+
+        
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Thêm" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Quay về trang Admin", "Index")
+</div>

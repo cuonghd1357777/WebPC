@@ -1,0 +1,82 @@
+﻿@model WEBPC.Models.sanpham
+@{
+    ViewBag.Title = "Detailssptk";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div>
+<h4>Chi tiết sản phẩm</h4>
+<hr />
+<dl class="dl-horizontal">
+    <dt>
+        Tên sản phẩm
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.tensanpham)
+    </dd>
+
+    <dt>
+        Mô tả
+    </dt>
+
+    <dd>
+        @Html.Raw(Model.mota.ToString().Replace("\n", "</p><p>&nbsp&nbsp&nbsp&nbsp&nbsp"))
+    </dd>
+
+    <dt>
+        Hình ảnh
+    </dt>
+
+    <dd>
+        <img style="height:100px;" src="~/hinh anh/@Model.hinhanh" />
+    </dd>
+
+    <dt>
+        Đơn giá
+    </dt>
+
+    <dd>
+        @Html.FormatValue(Model.dongia, "{0:#,##0 }") VNĐ
+    </dd>
+
+    <dt>
+        Số lượng
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.soluong)
+    </dd>
+
+    <dt>
+        Ngày cập nhật
+    </dt>
+
+    <dd>
+        @Html.FormatValue(Model.ngaycapnhat, "{0:dd/MM/yyyy}")
+    </dd>
+    <dt>
+        Bảo hành
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.baohanh)
+    </dd>
+
+    <dt>
+        Danh mục sản phẩm
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.danhmucsanpham.tendanhmuc)
+    </dd>
+
+</dl>
+</div>
+<p>
+
+    @Html.ActionLink("Quay về trang thống kê sản phẩm", "thongkesp1")
+   
+</p>
+
+

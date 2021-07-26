@@ -1,0 +1,525 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BD9BD102-290A-4C37-97F0-E3213AE537AB}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WEBPC</RootNamespace>
+    <AssemblyName>WEBPC</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44332</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.3\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.3\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.3\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.4.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.4.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.4.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.4.0.1\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.4.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.4.0.1\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.4.0.1\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.4.0.1\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.4.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\AdminController.cs" />
+    <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Admin\Models\groupin.cs" />
+    <Compile Include="Areas\Admin\Models\Mail.cs" />
+    <Compile Include="Areas\Admin\Models\tinhtrang.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\GioHangController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\WEBPCController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Library\encryption.cs" />
+    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\GioHang.cs" />
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\WEBPC.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WEBPC.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\PagedList.css" />
+    <Content Include="css\cartitem.css" />
+    <Content Include="css\cente.css" />
+    <Content Include="css\contact.css" />
+    <Content Include="css\content.css" />
+    <Content Include="css\detail.css" />
+    <Content Include="css\footer.css" />
+    <Content Include="css\hea.css" />
+    <Content Include="css\lefttcon.css" />
+    <Content Include="css\menutab.css" />
+    <Content Include="css\na.css" />
+    <Content Include="css\rightcon.css" />
+    <Content Include="css\top.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="hinh anh\0806_001.jpg" />
+    <Content Include="hinh anh\0806_002.jpg" />
+    <Content Include="hinh anh\0806_Blackwake.jpg" />
+    <Content Include="hinh anh\0806_Celeste.jpg" />
+    <Content Include="hinh anh\0806_Crysis.jpg" />
+    <Content Include="hinh anh\0806_ResidentEvil2.jpg" />
+    <Content Include="hinh anh\0806_Unravel2.jpg" />
+    <Content Include="hinh anh\29601_dell_e2216__4_.png" />
+    <Content Include="hinh anh\31129_nguon_fsp_hyn_series_hyn450atx_400w_0003_4.jpg" />
+    <Content Include="hinh anh\33518_samsung_lc27f591fd__4_.png" />
+    <Content Include="hinh anh\37003_asus_ph_gt1030_o2g_01.jpg" />
+    <Content Include="hinh anh\38048_fsp_power_supply_hyper_k_series_hp600_0001_2.jpg" />
+    <Content Include="hinh anh\40791_ssd_wd_green_240gb_sata_2_5 %281%29.jpg" />
+    <Content Include="hinh anh\40791_ssd_wd_green_240gb_sata_2_5.jpg" />
+    <Content Include="hinh anh\41505_____c___ng_ssd_samsung_860_pro_512gb_2_5_inch_sata3.jpg" />
+    <Content Include="hinh anh\41552_ram_antecmemory_1s.jpg" />
+    <Content Include="hinh anh\41555_ram_antecmemory_series_5_white_rgb.jpg" />
+    <Content Include="hinh anh\41557_ram_antecmemory_series_5_white.jpg" />
+    <Content Include="hinh anh\41719_____c___ng_ssd_wd_blue_1tb_sata_2_5_inch.jpg" />
+    <Content Include="hinh anh\42592_nguon_corsair_axi_seriestmax1600i_1600_watt_80_plus_titanium_certified_fully_modular_0010_11.jpg" />
+    <Content Include="hinh anh\43193_vg270__1_.jpg" />
+    <Content Include="hinh anh\43253_case_corsair_crystal_series_280x_rgb_tempered_glass_micro_atx_black_0007_1__2_.jpg" />
+    <Content Include="hinh anh\44257_mainboardgigabyte_z390_gaming_x_0000_1.jpg" />
+    <Content Include="hinh anh\444123.jpg" />
+    <Content Include="hinh anh\44415_____c___ng_ssd_kingfast_f6_pro_480gb_2_5_inch_sata3.jpg" />
+    <Content Include="hinh anh\44539_____c___ng_ssd_kingmax_smv32_120gb_2_5_inch_sata3.jpg" />
+    <Content Include="hinh anh\44863_h310cm_hdv_l1_.png" />
+    <Content Include="hinh anh\44883_dell_u2419h__4_.png" />
+    <Content Include="hinh anh\45079_hnc_intel_core_i9_xtreme_right_facing_850x850.jpg" />
+    <Content Include="hinh anh\45149_msi_rtx_2060_gaming_z___6gb_01.jpg" />
+    <Content Include="hinh anh\45206_samsung_ls34j550___4_.png" />
+    <Content Include="hinh anh\45415_____c___ng_ssd_plextor_px_128m8vc_128gb.jpg" />
+    <Content Include="hinh anh\45610_ram_kingmax_zeus_rgb.jpg" />
+    <Content Include="hinh anh\45829_asus_tuf_gtx1660__01.jpg" />
+    <Content Include="hinh anh\45945_vo_case_thermaltake_level_20_mt_mid_tower_mau_den_0003_1__1_.jpg" />
+    <Content Include="hinh anh\45976_vo_case_sama_tank_3_tempered_glass_mid_tower_mau_den_0003_1__1_.jpg" />
+    <Content Include="hinh anh\46208_ram_adata_value_4gb.jpg" />
+    <Content Include="hinh anh\46209_untitled.png" />
+    <Content Include="hinh anh\46213_kingston_predator_ddr4_2933_rgb_kit2.jpg" />
+    <Content Include="hinh anh\46354_nguon_seasonic_s12iii_650_650w_80_plus_bronze_mau_den__2_.jpg" />
+    <Content Include="hinh anh\46759_____c___ng_g___n_ngo__i_wd_my_passport_ssd_256gb_usb3_1_wdbkvx2560psl_wesn.jpg" />
+    <Content Include="hinh anh\46800_asu_xg32vqr__4_.png" />
+    <Content Include="hinh anh\46917_46916__mg_4255.png" />
+    <Content Include="hinh anh\47163_nguon_thermaltake_litepower_450w_rgb_0001_1__3_.jpg" />
+    <Content Include="hinh anh\47172_ed273a__1_.jpg" />
+    <Content Include="hinh anh\47176_mainboard_asus_rog_strix_b365_f_gaming_0002_3.jpg" />
+    <Content Include="hinh anh\47494_vggi436_01.jpg" />
+    <Content Include="hinh anh\47495_gigabyte_rtx_2070_super_aorus_1.jpg" />
+    <Content Include="hinh anh\47504_asus_rog_strix_rtx_2070_super__01.jpg" />
+    <Content Include="hinh anh\47540_____c___ng_ssd_adata_asx6000lnp_256gb_m_2_2280_pcie_nvme.jpg" />
+    <Content Include="hinh anh\47765_nguon_asus_rog_strix_650w_gold_650w_80_plus_gold_full_modular_0002_layer_3.jpg" />
+    <Content Include="hinh anh\48213_nguon_corsair_rm_series_rm750_750_watt_80_plus_gold_certified_fully_modular_0007_8.jpg" />
+    <Content Include="hinh anh\48260_case_thermaltake_view_28_riing_rgb_ca_1h2_00m1wn_01_0000_1__4_.jpg" />
+    <Content Include="hinh anh\48270_gigabyte_rtx_2080_super_gaming_oc__01.jpg" />
+    <Content Include="hinh anh\48580_case_xigmatek_gemini_white_rgb_strip_0004_1__3_.jpg" />
+    <Content Include="hinh anh\48638_case_phanteks_eclipse_p360x_tempered_glass_digtial_rgb_lighting_black_ph_ec360ptg_dbk01_1.jpg" />
+    <Content Include="hinh anh\48640_case_phanteks_eclipse_p300_mid_tower_tempered_glass_white_ph_ec300ptg_wt_1.jpg" />
+    <Content Include="hinh anh\48718_asus_rog_strix_rx_5700_0.jpg" />
+    <Content Include="hinh anh\48997_case_xigmatek_gemini_queen_en43835_1.png" />
+    <Content Include="hinh anh\49004_hnc_intel_i7_9700_right_facing_850x850.jpg" />
+    <Content Include="hinh anh\49332_gl10cs_vn021t.png" />
+    <Content Include="hinh anh\49437_hnc_intel_i9_10900x_right_facing_850x850.jpg" />
+    <Content Include="hinh anh\49614_asus_tuf3_gtx_1660_super_o6g_01.jpg" />
+    <Content Include="hinh anh\49715_asus_tuf_gaming_vg27vq__4_.png" />
+    <Content Include="hinh anh\49983_pc_gaming_shark_002.jpg" />
+    <Content Include="hinh anh\49984_pc_gaming_falcon_002.jpg" />
+    <Content Include="hinh anh\50042_____c___ng_ssd_wd_ultrastar_dc_sa210.jpg" />
+    <Content Include="hinh anh\50108_asus_tuf_gtx_1650_super_o4g_01.jpg" />
+    <Content Include="hinh anh\50150_ram_axpro_black_pcb_ddr4.jpg" />
+    <Content Include="hinh anh\50168_msi_gtx_1650_super_gaming_x_4g_01.jpg" />
+    <Content Include="hinh anh\50266_asus_va24ehe__4_.png" />
+    <Content Include="hinh anh\50419_nguon_sama_eps_600_600w_mau_den_0002_1__1_.jpg" />
+    <Content Include="hinh anh\51065_pc_gaming_shark_008.jpg" />
+    <Content Include="hinh anh\51201_ram_adata_d41_red.jpg" />
+    <Content Include="hinh anh\51268_vo_case_may_tinh_xigmatek_venom_mau_denno_fan_0004_1__1_.jpg" />
+    <Content Include="hinh anh\51277_msi_rtx_2060_super_armor_oc_8g_01.jpg" />
+    <Content Include="hinh anh\51300_hnc_avexir_core_green_850x850.jpg" />
+    <Content Include="hinh anh\51624_mb320l_argb_gallery_01_zoom.jpg" />
+    <Content Include="hinh anh\51643_pc_gaming_shark_010.jpg" />
+    <Content Include="hinh anh\52093_pc_gaming_lion_002_ %281%29.jpg" />
+    <Content Include="hinh anh\52093_pc_gaming_lion_002_.jpg" />
+    <Content Include="hinh anh\52289_msi_optix_g27cq4__4_.png" />
+    <Content Include="hinh anh\53165_as_rx570_8g_rog.jpg" />
+    <Content Include="hinh anh\53304_pcgm200_2.jpg" />
+    <Content Include="hinh anh\53306_pcgm202_3.jpg" />
+    <Content Include="hinh anh\53344_pcgm203.jpg" />
+    <Content Include="hinh anh\A320M-S2H_1_compressed-193x193.jpg" />
+    <Content Include="hinh anh\B365M_AORUS_ELITE_1_compressed-1-193x193.jpg" />
+    <Content Include="hinh anh\B365M_DS3H_1_compressed-1-193x193.jpg" />
+    <Content Include="hinh anh\B450M-DS3H_compressed-193x193.jpg" />
+    <Content Include="hinh anh\backgr whitle.jpg" />
+    <Content Include="hinh anh\backrounmss.jpg" />
+    <Content Include="hinh anh\banerr.jpg" />
+    <Content Include="hinh anh\bieu tuong chech.jpg" />
+    <Content Include="hinh anh\btn_gui.png" />
+    <Content Include="hinh anh\Chip-G4560-300x300.jpg" />
+    <Content Include="hinh anh\Chíp-G440-300x300.jpg" />
+    <Content Include="hinh anh\Chíp-G5400-300x300.jpg" />
+    <Content Include="hinh anh\Chíp-I3-8100-300x300.jpg" />
+    <Content Include="hinh anh\Chíp-i7_7700-300x300.jpg" />
+    <Content Include="hinh anh\Chíp-I9-9900k-300x300.jpg" />
+    <Content Include="hinh anh\EN.png" />
+    <Content Include="hinh anh\fb.png" />
+    <Content Include="hinh anh\g5400.htm" />
+    <Content Include="hinh anh\GEAR-banner-tin-tuc-thang-11.png" />
+    <Content Include="hinh anh\giohang.png" />
+    <Content Include="hinh anh\gt730.jpg" />
+    <Content Include="hinh anh\header-background.jpg" />
+    <Content Include="hinh anh\hinh anh caii dat.png" />
+    <Content Include="hinh anh\hình nền hea.jpg" />
+    <Content Include="hinh anh\Hình-nền-máy-tính-Gradient-màu-xám.png" />
+    <Content Include="hinh anh\I5-7400-300x300.jpg" />
+    <Content Include="hinh anh\I5-8400.jpg" />
+    <Content Include="hinh anh\icon-skype.jpg" />
+    <Content Include="hinh anh\icon-zalo.jpg" />
+    <Content Include="hinh anh\Intel-i7-8700-8th-300x300.jpg" />
+    <Content Include="hinh anh\latop asus.jpeg" />
+    <Content Include="hinh anh\latop asus1.jpeg" />
+    <Content Include="hinh anh\logo-dien-thoai2.jpg" />
+    <Content Include="hinh anh\logo.jpg" />
+    <Content Include="hinh anh\logo123.png" />
+    <Content Include="hinh anh\maytinh.png" />
+    <Content Include="hinh anh\menu tab.jpg" />
+    <Content Include="hinh anh\pc 6,8 trieu.jpg" />
+    <Content Include="hinh anh\pc gaming anh.jpg" />
+    <Content Include="hinh anh\rtx2080ti.jpg" />
+    <Content Include="hinh anh\san pham.jpg" />
+    <Content Include="hinh anh\sea2123.jpg" />
+    <Content Include="hinh anh\search.png" />
+    <Content Include="hinh anh\steam.jpg" />
+    <Content Include="hinh anh\timkiem12.jpg" />
+    <Content Include="hinh anh\trang chu.jpg" />
+    <Content Include="hinh anh\tải xuống %281%29.jpg" />
+    <Content Include="hinh anh\tải xuống.jpg" />
+    <Content Include="hinh anh\uu dai.png" />
+    <Content Include="hinh anh\vanchuyen.jpg" />
+    <Content Include="hinh anh\vohang 1.jpg" />
+    <Content Include="hinh anh\X299X_Designare_10G_1_compressed-1-193x193.jpg" />
+    <Content Include="hinh anh\Z390_Aorus_pro_wifi_1_compressed-193x193.jpg" />
+    <Content Include="jss\contac.js" />
+    <Content Include="jss\dangnhapjss.js" />
+    <Content Include="jss\jss.js" />
+    <Content Include="jss\text.js" />
+    <Content Include="jss\vohang.js" />
+    <Content Include="Luottruycap.txt" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="hinh anh\BAI THUC HANH 4.pdf" />
+    <Content Include="hinh anh\Bao-cao-Do-an_Tham-Khao.pdf" />
+    <Content Include="hinh anh\bth5.docx" />
+    <Content Include="hinh anh\Cac quy tac chuyen doi tu Class Diagram sang CSDL.pdf" />
+    <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="Areas\Admin\Views\Home\Login.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_LayoutAdmin.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin\Create.cshtml" />
+    <Content Include="Models\WEBPC.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>WEBPC.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Areas\Admin\Views\Admin\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin\lienhe.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin\SendMail.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin\khachhang.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin\Detailskh.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin\Editkh.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin\donhang.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin\Detailsd.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin\Detailsdh.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin\capnhatdh.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin\leftmenu.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin\thongke.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin\formthongke.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin\thongketien.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin\thongketienbdc.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin\thongke1.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin\thongkesp.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin\thongkesp1.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin\Detailssptk.cshtml" />
+    <None Include="Models\WEBPC.dbml.layout">
+      <DependentUpon>WEBPC.dbml</DependentUpon>
+    </None>
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
+    <Content Include="Views\Manage\ChangePassword.cshtml" />
+    <Content Include="Views\Manage\Index.cshtml" />
+    <Content Include="Views\Manage\ManageLogins.cshtml" />
+    <Content Include="Views\Manage\SetPassword.cshtml" />
+    <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
+    <Content Include="Views\Shared\Lockout.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\WEBPC\Index.cshtml" />
+    <Content Include="Views\Shared\_LayoutPC.cshtml" />
+    <Content Include="Views\WEBPC\Loginn.cshtml" />
+    <Content Include="Views\WEBPC\Header.cshtml" />
+    <Content Include="Views\WEBPC\HeaderAcount.cshtml" />
+    <Content Include="Views\WEBPC\dangki.cshtml" />
+    <Content Include="Views\WEBPC\sanpham.cshtml" />
+    <Content Include="Views\WEBPC\leftdanhmuc.cshtml" />
+    <Content Include="Views\WEBPC\sanphamtheodanhmuc.cshtml" />
+    <Content Include="Views\Shared\_LayoutIndex.cshtml" />
+    <Content Include="Views\WEBPC\chinhsachbaohanh.cshtml" />
+    <Content Include="Views\WEBPC\lienhe.cshtml" />
+    <Content Include="Views\WEBPC\chitietsanpham.cshtml" />
+    <Content Include="Views\WEBPC\thongtintaikhoan.cshtml" />
+    <Content Include="Views\WEBPC\Editkh.cshtml" />
+    <Content Include="Views\WEBPC\thaydoimatkhau.cshtml" />
+    <Content Include="Views\GioHang\GioHangPartial.cshtml" />
+    <Content Include="Views\GioHang\GioHang.cshtml" />
+    <Content Include="Views\GioHang\donhang.cshtml" />
+    <Content Include="Views\GioHang\xacnhandonhang.cshtml" />
+    <Content Include="Views\Shared\_LayoutPagesanpham.cshtml" />
+    <Content Include="Views\WEBPC\Headersanpham.cshtml" />
+    <Content Include="Views\WEBPC\gt730.cshtml" />
+    <Content Include="Views\WEBPC\steam.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admin\Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>64960</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44332/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

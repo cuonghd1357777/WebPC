@@ -1,0 +1,36 @@
+.hinhanhsp{
+	width:170px;
+	padding:5px 0 5px 30px;
+	float:left;
+	margin-left:50px;
+	margin-top:20px;
+	
+}
+
+.hinhanhsp1{
+	padding:0 0 0 20px;
+}
+.sp1{
+	border:1px solid #dfd1d1;
+	margin:3px 0 0 0;
+	padding:8px 5px;
+}
+.detailsp{
+	float:left;
+	font-size:18px;
+	margin-left:40px;
+	margin-top:20px;
+}
+.probox{
+	height:300px;
+}
+a.add {
+	text-align:center;
+	text-decoration:none;
+	font-size:25px;
+	color:#F03;
+	
+}
+ a:hover.add{
+	 color:#C90;
+ }

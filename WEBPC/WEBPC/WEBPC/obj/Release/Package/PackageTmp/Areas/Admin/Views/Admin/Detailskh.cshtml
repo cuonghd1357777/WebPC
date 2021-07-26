@@ -1,0 +1,76 @@
+﻿@model WEBPC.Models.khachhang
+
+@{
+    ViewBag.Title = "Detailskh";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>THÔNG TIN KHÁCH HÀNG</h2>
+
+<div>
+   
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayName("Tên khách hàng")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tenkh)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Tên đăng nhập")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tendn)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Mật khẩu")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.matkhau)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Giới tính")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.gioitinh)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Số điện thoại")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sodienthoai)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Email")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.email)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Địa chỉ")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.diachi)
+        </dd>
+
+    </dl>
+</div>
+<p>
+   
+    @Html.ActionLink("Quay về trang khách hàng", "khachhang")
+    <a href="@Url.Action("Deletekh",new {id=Model.makh})" class="btn btn-warning" role="button">Xóa</a>
+</p>

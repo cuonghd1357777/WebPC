@@ -1,0 +1,69 @@
+﻿@model IEnumerable<WEBPC.Models.lienhe>
+
+@{
+    ViewBag.Title = "lienhe";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2 style="color:peru;">DANH SÁCH THÔNG TIN LIÊN HỆ</h2>
+
+
+<table class="table">
+    <tr>
+
+        <th>
+            @Html.DisplayName("Tên người gửi")
+        </th>
+        <th>
+            @Html.DisplayName("Địa chỉ")
+        </th>
+        <th>
+            @Html.DisplayName("Số điện thoại")
+        </th>
+        <th>
+            @Html.DisplayName("Email")
+        </th>
+        <th>
+            @Html.DisplayName("Chủ đề")
+        </th>
+        <th>
+            @Html.DisplayName("Nội dung")
+        </th>
+        <th>
+            @Html.DisplayName("Ngày gửi")
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.tennguoigui)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.diachi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sodienthoai)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.chude)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Noidung)
+        </td>
+        <td>
+            @Html.FormatValue( item.ngaygui,"{0:dd/MM/yyyy}")
+        </td>
+        <td>
+            <a href="@Url.Action("SendMail","Admin",new {id=item.idlienhe })" class="btn btn-primary" role="button">Trả lời</a>
+            <a href="@Url.Action("xoalienhe","Admin",new {id=item.idlienhe })" class="btn btn-danger" role="button">Xóa</a>
+
+        </td>
+    </tr>
+}
+
+</table>

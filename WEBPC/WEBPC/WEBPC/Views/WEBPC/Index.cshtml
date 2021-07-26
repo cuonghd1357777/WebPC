@@ -1,0 +1,395 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutIndex.cshtml";
+}
+
+@using WEBPC.Models;
+@using PagedList.Mvc;
+@model PagedList.PagedList<sanpham>
+
+<div class="col-sm-2 col-md-2 col-lg-2 col-xs-12">
+
+    <div class="box1">Sản phẩm HOT</div>
+    <div class="kkk">
+        <div class="d"><a href="~/WEBPC/chitietsanpham/37"> Card màn hình ASUS ROG STRIX RTX 2070 Super-A8G GAMING (8GB GDDR6, 256-bit)</a></div>
+        <div class="dd">
+            <a href="#">
+                <img style="
+    width: 100%;
+" src="/hinh anh/47504_asus_rog_strix_rtx_2070_super__01.jpg">
+            </a>
+        </div>
+        <div class="ddd">
+            <span class="f">
+                20,000,000đ
+            </span>
+            <span class="ff">
+                16,399,000đ
+            </span>
+
+        </div>
+        <div class="box1">Bản tin</div>
+        <div class="kkk">
+            <input type="text" name="Bản tin" class="nhapbantin" value="Email">
+            <a href="#" class="thamgia">Tham gia</a>
+        </div>
+
+
+        <!--quang cao-->
+
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                Bài viết hay
+            </div>
+            <div class="panel-body">
+                <ul class="block_tophits">
+                    <li class="clearfix">
+                        <a title="NVIDIA GeForce GT 730 có thể xuất 4 màn hình cùng lúc" href="~/WEBPC/gt730">
+                            <img style="
+    width: 100%;
+" src="~/hinh anh/gt730.jpg" width="70" class="img-thumbnail pull-left">
+                        </a>
+                        <a title="NVIDIA GeForce GT 730 có thể xuất 4 màn hình cùng lúc" class="show" href="~/WEBPC/gt730" data-content="" data-img="/assets/news/2019_06/0594e4684d3c0dae72237bff55419278.jpg" data-rel="block_news_tooltip">NVIDIA GeForce GT 730 có thể xuất 4 màn hình cùng lúc</a>
+                    </li>
+                    <li class="clearfix">
+                        <a title="5 tựa game khủng giảm giá cực sốc trên Steam" href="~/WEBPC/steam">
+                            <img src="~/hinh anh/steam.jpg" style="
+    width: 100%;
+" width="70" class="img-thumbnail pull-left">
+                        </a>
+                        <a title="5 tựa game khủng giảm giá cực sốc trên Steam" class="show" href="~/WEBPC/steam" data-content="" data-img="/assets/news/2020_01/5e1fff33ace33.jpg" data-rel="block_news_tooltip">5 tựa game khủng giảm giá cực sốc trên Steam</a>
+                    </li>
+
+                </ul>
+
+            </div>
+        </div>
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+<div class="col-sm-10 col-md-10 col-lg-10 col-xs-12">
+    <div class="col-sm-12 col-md-12 col-lg-12 col-xs-12">
+        <div class="col-sm-9 col-md-9 col-lg-9 col-xs-12">
+            <div id="contactArea" style="display: none;">
+                <div class="thongbao1">
+                    <span class="closee">×</span>
+                    <img src="thong bao.png" alt="">
+
+
+                </div>
+            </div>
+            <div class="laga1">
+
+                <img class="laga" src="~/hinh anh/pc gaming anh.jpg" style="
+    height: 400px;
+">
+            </div>
+            <div class="sanphammoi1">NHẬN NGAY ƯU ĐÃI KHI MUA PC TẠI VINH TÍNH GIA CƯỜNG</div>
+            <div class="laga1">
+                <img class="laga" style=" margin-top: 10px;" src="~/hinh anh/GEAR-banner-tin-tuc-thang-11.png">
+            </div>
+
+
+
+
+
+
+
+        </div>
+        <div class="col-sm-3 col-md-3 col-lg-3 col-xs-12">
+
+            <div id="myModal" class="modal" style="display: none;">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Giỏ Hàng</h5>
+                        <span class="close">×</span>
+                    </div>
+                    <div class="modal-body">
+                        <div class="cart-row">
+                            <span class="cart-item cart-header cart-column">Sản Phẩm</span>
+                            <span class="cart-price cart-header cart-column">Giá</span>
+                            <span class="cart-quantity cart-header cart-column">Số Lượng</span>
+                        </div>
+                        <div class="cart-items">
+
+
+                        </div>
+
+
+
+
+
+
+                        <div class="cart-total">
+                            <strong class="cart-total-title">Tổng Cộng:</strong>
+                            <span class="cart-total-price">0</span>
+                        </div>
+
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary close-footer">Đóng</button>
+                            <button type="button" class="btn btn-primary order">Thanh Toán</button>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <div class="video"><iframe width="100%" src="https://www.youtube.com/embed/Uo8RfqPo064?autoplay=1&amp;mute=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+            <div id="hot_news_home">
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        Hỗ trợ khách hàng
+                    </div>
+                    <div class="panel-body">
+                        <ul class="Supports List">	<li>	<div><img alt="icon zalo" height="45" src="~/hinh anh/icon-zalo.jpg" style="float:left" width="45"></div>	<div>&nbsp; <span style="color:rgb(255, 0, 0);"><b><i>BỘ PHẬN KINH DOANH</i></b></span><br>	<b>&nbsp; <span style="color:rgb(0, 0, 255);">MR QUANG - 0902 470 670</span></b></div>	</li></ul><ul class="Supports List">	<li>	<div><b><img alt="icon zalo" height="45" src="~/hinh anh/icon-zalo.jpg" style="float:left" width="45"></b></div>	<div><b>&nbsp; <span style="color:rgb(255, 0, 0);"><strong><em>BỘ PHẬN KỸ THUẬT</em></strong></span><br>	<b>&nbsp; <span style="color:rgb(0, 0, 255);">MR QUANG - 0989.470.670</span></b></b></div>	</li></ul><ul class="Supports List">	<li>	<div><b><img alt="icon zalo" height="45" src="~/hinh anh/icon-zalo.jpg" style="float:left" width="45"></b></div>	<div><b>&nbsp;<strong><span style="color:rgb(255, 0, 0);"><em>&nbsp;BỘ PHẬN KẾ TOÁN</em></span></strong><br>	<b>&nbsp;<span style="color:rgb(0, 0, 255);"><span style="background-color:rgb(255, 255, 255);"> </span>MS NHUNG<span style="background-color:rgb(255, 255, 255);">&nbsp;- 0979.936.225</span></span></b></b></div>	</li></ul><ul class="Supports List">	<li>	<div><b><b><img alt="icon skype" height="45" src="~/hinh anh/icon-skype.jpg" style="float:left" width="45"></b></b></div>	<div><b><b>&nbsp;<span style="color:rgb(255, 0, 0);"><em><strong>&nbsp;BỘ PHẬN TƯ VẤN</strong></em></span><br>	<b>&nbsp; <span style="color:rgb(0, 0, 255);">MR QUANG</span></b><br>	<b>&nbsp;<span style="color:rgb(211, 84, 0);"></span></b></b></b></div>	</li></ul>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+    <div class="wrapper">
+        <h2 class="text-center" style="
+    color: green;
+">
+            Sản phẩm mới
+        </h2>
+
+        <div class="products" style="
+    text-align: center;
+
+">
+            <ul>
+                @{
+                    int i = 0;
+                }
+                @foreach (var item in @Model)
+                {
+                    i++;
+                    if (i % 3 == 0)
+                    {
+                        <li class="col-sm-4 col-md-4 col-lg-4 col-xs-6 hidden-xs">
+                            <div class="main-product">
+                                <div class="img-product">
+                                 <a href="@Url.Action("chitietsanpham","WEBPC",new {id=item.masp })">   <img class="img-prd" src="~/hinh anh/@item.hinhanh" alt=@item.tensanpham></a>
+                                </div>
+                                <div class="content-product">
+                                    <h3 class="content-product-h3">
+                                        <a style="
+    color: black;
+    text-decoration: none;
+" href="@Url.Action("chitietsanpham","WEBPC",new {id=item.masp })"> @item.tensanpham</a>
+</h3>
+<div class="content-product-deltals">
+    <div class="price">
+        <span class="money">@Html.FormatValue(item.dongia, "{0:#,##0}")đ</span>
+    </div>
+    <p><a href="@Url.Action("themgiohang","GioHang",new {id=item.masp,Url=Request.Url.ToString() })" class="btn btn-warning2" role="button"> Thêm giỏ hàng</a></p>
+</div>
+</div>
+</div>
+</li>
+
+}
+else
+{
+
+<li class="col-sm-4 col-md-4 col-lg-4 col-xs-6">
+    <div class="main-product">
+        <div class="img-product">
+            <a href="@Url.Action("chitietsanpham","WEBPC",new {id=item.masp })">   <img class="img-prd" src="~/hinh anh/@item.hinhanh" alt=@item.tensanpham></a>
+        </div>
+        <div class="content-product">
+            <h3 class="content-product-h3"><a href="@Url.Action("chitietsanpham","WEBPC",new {id=item.masp })"> @item.tensanpham</a></h3>
+            <div class="content-product-deltals">
+                <div class="price">
+                    <span class="money">@Html.FormatValue(item.dongia, "{0:#,##0}")đ</span>
+                </div>
+                <p><a href="@Url.Action("themgiohang","GioHang",new {id=item.masp,Url=Request.Url.ToString() })" class="btn btn-warning2" role="button">Thêm giỏ hàng</a></p>
+            </div>
+        </div>
+    </div>
+</li>
+}
+}
+
+            </ul>
+        </div>
+    </div>
+</div>
+<style>
+    .btn-warning2 {
+        color: #fff;
+        background-color: Highlight;
+    }
+
+        .btn-warning2:hover {
+            color: #fff;
+            background-color: burlywood;
+        }
+</style>
+Trang @(Model.PageCount<Model.PageNumber?0:Model.PageNumber)/@Model.PageCount
+<div class="menutrang">
+    @Html.PagedListPager(Model, page => Url.Action("Index", new { page = page,chuoi=ViewBag.a }))
+</div>
+<style>
+    .menutrang {
+        display: inline;
+        text-align: center;
+    }
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,131 @@
+﻿@model PagedList.PagedList<donhang>
+@using WEBPC.Areas.Admin.Models
+
+@using WEBPC.Models;
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "donhang";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2 style="text-align:center; margin-bottom:50px;">QUẢN LÝ ĐƠN HÀNG</h2>
+@using (Html.BeginForm("donhang", "Admin"))
+{
+<div>
+   
+    <div class="dropdown" style="float:left;">
+        <button class="btn btn success" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">Loai đơn hàng<span class="caret"></span></button>
+        <ul class="dropdown-menu">
+            <li><a href="@Url.Action("donhang", "Admin",new { @loaidh="Đơn hàng đang vận chuyển"})">Đơn hàng đang vận chuyển</a> </li>
+            <li role="separator" class="divider"></li>
+            <li><a href="@Url.Action("donhang", "Admin",new { @loaidh="Đơn hàng đã hoàn tất"})">Đơn hàng đã hoàn tất</a> </li>
+            <li role="separator" class="divider"></li>
+            <li><a href="@Url.Action("donhang", "Admin",new { @loaidh="Đơn hàng mới"})">Đơn hàng mới</a> </li>
+            <li role="separator" class="divider"></li>
+            <li><a href="@Url.Action("donhang", "Admin",new { @loaidh="Đơn hàng bị hủy"})">Đơn hàng bị hủy</a> </li>
+            
+
+
+
+        </ul>
+    </div>
+    <input style="margin-left:20px;" type="submit" value="Bộ lọc" role="button" class="btn btn-success" />
+
+    <input style="float:right;" type="date" name="ngaylapcuoi" value="@ViewBag.ngaylapcuoi" />
+    <input style="float:right;" type="date" name="ngaylap" value="@ViewBag.ngaylap" />
+
+    <div style="float:left; margin-top:10px;">
+        <input type="text" placeholder="Tìm kiếm.." id="myInput" name="ngaytimkiem" />
+        <input type="submit" value="Tìm kiếm" class="btn btn-default" role="button" />
+    </div>
+</div>
+}
+<a style="float:right;margin-top:20px;margin-bottom:10px;" href="@Url.Action("xoahetdh")" class="btn btn-danger" role="button">Xóa toàn bộ đơn hàng</a>
+<a style="float:right;margin-top:20px;margin-right:20px;margin-bottom:10px;" href="@Url.Action("xemhetdh")" class="btn btn-warning" role="button">Xem toàn bộ đơn hàng</a>
+
+<div style="margin-top:20px;">
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayName("Mã đơn hàng")
+            </th>
+            <th>
+                @Html.DisplayName("Mã khách hàng")
+            </th>
+            <th>
+                @Html.DisplayName("Ngày lập")
+            </th>
+            <th>
+                @Html.DisplayName("Tình trạng")
+            </th>
+            <th>
+                @Html.DisplayName("Ngày giao hàng")
+            </th>
+            <th>
+                @Html.DisplayName("Hình thức thanh toán")
+            </th>
+            <th>
+                @Html.DisplayName("Hình thức giao hàng")
+            </th>
+            <th>
+                @Html.DisplayName("Tổng tiền (VNĐ)")
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+
+                <td>
+
+                    @Html.DisplayFor(modelItem => item.madonhang)
+                </td>
+                <td>
+
+                    @Html.DisplayFor(modelItem => item.makh)
+                </td>
+                <td>
+                    @Html.FormatValue(item.ngaylap, "{0:dd/MM/yyyy}")
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.tinhtrang)
+
+                </td>
+                <td>
+                    @Html.FormatValue(item.NgayGiaoHang, "{0:dd/MM/yyyy}")
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HTThanhToan)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HTGiaoHang)
+                </td>
+                <td>
+                    @Html.FormatValue(item.tongtien, "{0:0,##0}")
+                </td>
+                <td>
+                    <a href="@Url.Action("capnhatdh",new {id=item.madonhang })" class="btn btn-primary" role="button">Cập nhật</a>
+                    <a href="@Url.Action("Detailsdh",new {id=item.madonhang })" class="btn btn-success" role="button">Chi tiết</a>
+                    <a href="@Url.Action("Deletedh",new {id=item.madonhang })" class="btn btn-danger" role="button">Xóa</a>
+
+                </td>
+            </tr>
+        }
+
+    </table>
+
+</div>
+       Trang @(Model.PageCount<Model.PageNumber?0:Model.PageNumber)/@Model.PageCount
+    <div class="menutrang">
+
+        @Html.PagedListPager(Model, page => Url.Action("donhang", new { page = page, chuoi = ViewBag.a, ngayg = ViewBag.ngaygiao, ngayc = ViewBag.ngaygiaocuoi, ldm = ViewBag.ldm }))
+
+    </div>
+
+    <style>
+        .menutrang {
+            display: inline;
+            text-align: center;
+        }
+    </style>

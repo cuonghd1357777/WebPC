@@ -1,0 +1,116 @@
+﻿@model WEBPC.Models.donhang
+
+@{
+    ViewBag.Title = "donhang";
+    Layout = "~/Views/Shared/_LayoutIndex.cshtml";
+}
+
+
+@using (Html.BeginForm())
+{
+
+<div style="height:500px; ">
+    <h2>Thông tin đơn hàng</h2>
+    <hr />
+    <div>
+        <dl class="dl-horizontal">
+
+            <dt>
+                @Html.DisplayName("Họ tên")
+            </dt>
+
+            <dd>
+                @ViewBag.hoten
+            </dd>
+            <dt>
+                @Html.DisplayName("Địa chỉ")
+            </dt>
+
+            <dd>
+                @ViewBag.diachi
+            </dd>
+            <dt>
+                @Html.DisplayName("Số điện thoại")
+            </dt>
+
+            <dd>
+                @ViewBag.sodienthoai
+            </dd>
+
+            <dt>
+                @Html.DisplayName("Ngày lập")
+            </dt>
+
+            <dd>
+                @DateTime.Now.ToString("dd/MM/yyyy")
+            </dd>
+
+
+
+            <dt>
+                @Html.DisplayName("Ngày giao hàng")
+            </dt>
+
+            <dd>
+                <input type="date" name="ngaygiao" value="@ViewBag.ngaylap" /> <div class="lii">@ViewBag.err1</div>
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.HTThanhToan)
+            </dt>
+
+            <dd>
+
+
+                <input  name="httt" type="radio" value="Ship code">Ship code
+                <input name="httt" type="radio" value="Chuyển khoản">Chuyển khoản
+                <div class="lii">@ViewBag.err2</div>
+
+
+
+
+            </dd>
+
+            <dt>
+                @Html.DisplayName("Hình thức giao hàng")
+            </dt>
+
+            <dd>
+                <input name="vc" type="radio" value="ViettelPost" >ViettelPost
+                <input name="vc" type="radio" value="Giao hàng nhanh">Giao hàng nhanh
+
+            </dd>
+            <dd>
+                <input name="vc" type="radio" value="Giao Hàng Tiết Kiệm">Giao Hàng Tiết Kiệm
+                <input name="vc" type="radio" value="Việt Nam Spot">Việt Nam Spot
+            </dd>
+            <div class="lii">@ViewBag.err3</div>
+            <dt style="
+    margin-top: 20px;
+"><a href="@Url.Action("GioHang","GioHang")" style="font-weight:bold;text-decoration:none;">Quay lại giỏ hàng</a></dt>
+            <dd>
+                <input type="submit" style="
+    height: 30px;
+    color: white;
+    background-color: orange;
+    border-color: orange;
+    border-radius: 8px;
+    width: 100px;
+    margin-top:15px;
+" value="Đặt hàng" />
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+       
+    </p>
+
+</div>
+}
+<style>
+    .lii{
+        margin-left:20px;
+        color:red;
+    }
+</style>

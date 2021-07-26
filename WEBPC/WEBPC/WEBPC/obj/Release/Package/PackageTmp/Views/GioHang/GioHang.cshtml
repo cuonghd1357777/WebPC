@@ -1,0 +1,122 @@
+﻿@model List<WEBPC.Models.GioHang>
+@{
+    ViewBag.Title = "GioHang";
+    Layout = "~/Views/Shared/_LayoutIndex.cshtml";
+}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    .btnic {
+        background-color: DodgerBlue;
+        border: none;
+        color: white;
+        padding: 12px 16px;
+        text-align: center;
+        font-size: 17px;
+        cursor: pointer;
+    }
+</style>
+
+<div >
+    <div class="col-sm-12 col-md-12 col-lg-12 col-xs-12" style="margin-top: 20px;">
+        <div class="col-sm-12 col-md-12 col-lg-12 col-xs-12">
+            <h2 class="modal-title" style="text-align:center;margin-bottom:20px; color:firebrick">THÔNG TIN GIỎ HÀNG</h2>
+
+        </div>
+        <div class="col-sm-12 col-md-12 col-lg-12 col-xs-12">
+            <div class="cart-row" style="font-size: 18px;margin-bottom: 20px;font-weight: bold;/* font: message-box; */">
+                <div class="col-sm-1 col-md-1 col-lg-1 col-xs-1">Mã SP</div>
+                <div class="col-sm-2 col-md-2 col-lg-2 col-xs-2">Tên sản phẩm</div>
+                <div class="col-sm-2 col-md-2 col-lg-2 col-xs-2">Hình ảnh</div>
+                <div class="col-sm-2 col-md-2 col-lg-2 col-xs-2">Giá</div>
+                <div class="col-sm-3 col-md-3 col-lg-3 col-xs-3">Số Lượng</div>
+                <div class="col-sm-2 col-md-2 col-lg-2 col-xs-2">Thành tiền</div>
+
+
+                <div class="col-sm-1 col-md-1 col-lg-1 col-xs-1"></div>
+            </div>
+            <div class="cart-items">
+                @foreach (var item in Model)
+                {
+                    <div class="cart-row">
+
+                        <div class="col-sm-1 col-md-1 col-lg-1 col-xs-1" style="
+    margin: auto;
+">@item.Masp</div>
+<div class="col-sm-2 col-md-2 col-lg-2 col-xs-2" style="
+    margin: auto;
+"><a href="@Url.Action("chitietsanpham","WEBPC",new { id=item.Masp})">@item.Tensp</a></div>
+<div class="col-sm-2 col-md-2 col-lg-2 col-xs-2" style="
+    margin: auto;
+">
+    <img class="cart-item-image" src="~/hinh anh/@item.Hinhanh" width="100" height="100">
+</div>
+<div class="col-sm-2 col-md-2 col-lg-2 col-xs-2" style="
+    margin: auto;
+">@string.Format("{0:#,##0,0}", item.Dongia) ₫</div>
+<div class="col-sm-3 col-md-3 col-lg-3 col-xs-3" style="
+    margin: auto;
+">
+    <a href="@Url.Action("Add","GioHang",new { id=item.Masp})">
+        <span class="glyphicon glyphicon-plus"></span>
+    </a>
+    <label name="txtsoluong" style="margin-left:20px;margin-right:20px;">@item.Soluong</label>
+    <a href="@Url.Action("reduce","GioHang",new { id=item.Masp})">
+        <span class="glyphicon glyphicon-minus"></span>
+    </a>
+
+</div>
+<div class="col-sm-2 col-md-2 col-lg-2 col-xs-2" style="
+    margin: auto;
+">@string.Format("{0:#,##0,0}", item.Thanhtien) ₫</div>
+<div class="col-sm-1 col-md-1 col-lg-1 col-xs-1" style="
+    margin: auto;
+">    <p> <a class="btnic" href="@Url.Action("xoagiohang","GioHang",new {id=item.Masp})"> <i class="fa fa-trash"></i></a></p></div>
+
+</div>
+}
+            </div>
+
+
+
+
+
+
+            <div class="cart-total">
+
+                <a href="@Url.Action("xoahetgiohang","GioHang")" style="
+    text-decoration: none;
+    margin-right: 10px;
+    font-weight: bold;
+    font-size: 20px;
+    color:red;
+">Xóa giỏ hàng</a>
+                <strong class="cart-total-title">Tổng Cộng: @string.Format("{0:#,##0,0}", ViewBag.tongtien) ₫</strong>
+                <h2 style="margin-left:100px;"><a style="text-decoration:none;" href="@Url.Action("donhang", "GioHang")">Đặt hàng</a></h2>
+
+            </div>
+
+
+
+        </div>
+    </div>
+    <style>
+        .btn-warning1 {
+            color: #fff;
+            background-color: #f44336;
+            border-color: #f44336;
+        }
+         .btn-warning1:hover {
+                color: #fff;
+                background-color:burlywood;
+            }
+    </style>
+
+
+
+
+
+
+
+
+</div>
+

@@ -1,0 +1,143 @@
+/* CSS Document */
+.hea{
+	background:url(../hinh%20anh/backgr%20whitle.jpg);
+	 center ;
+	margin:0px auto;
+
+	height:158px;
+	border-top:2px solid #C00;
+}
+.a {
+    color: white;
+    text-decoration: none;
+}
+#logo{
+	float:left;
+	padding:0px;
+	margin-left:35px;
+	
+}
+.navbar-toggle .icon-bar {
+    display: block;
+    width: 22px;
+    height: 2px;
+    border-radius: 1px;
+	background-color:#FFF;
+}
+.slider{
+	
+	
+	float:left;
+	padding:0 0 0 0px;
+	margin-left:50px;
+	text-align:center;
+	
+}
+.s1{
+	font-size:29px;
+	
+	color:#009;
+	margin-top:30px;
+	margin-left:0px;
+	
+	
+}
+.s2{
+	font-size:20px;
+	color:#933;
+	margin-top:8px;
+}
+.c2{
+	float:left;
+	margin-left:55px;
+	margin-top:25px;
+}
+.c3{
+	float:right;
+	margin-right:20px;
+
+	margin-top:45px;
+	color:#F00;
+}
+.top_{
+	float:left;
+	width:1px;
+	height:158px;
+}
+.con_{
+	width:538px;
+	float:left;
+	padding:15px 30px 0 30px;
+	
+}
+.hinhanh2{
+	float:left;
+	padding:0px 0 10px 0;
+}
+
+.details{
+	float:left;
+	padding:0 0 0 30px;
+	width:220px;
+}
+.slider .con_ .details .title{
+	
+	font-size: 15px;
+	color:#CCC;
+	font-weight:bold;
+}
+.slider .con_ .details .text_{
+	padding:5px 0 5px 0;
+	font-size:12px;
+	color:#963;
+	text-align:justify;
+	line-height:15px;
+	
+}
+.hh{
+	padding:0 30px;
+	text-align:center;
+	float:left;
+	font-size:10px;
+}
+.hhh{
+	width:22px;
+	height:22px;
+	display:block;
+	float:left;
+	line-height:23px;
+	text-align:center;
+	
+}
+.navbar-nav a{
+	color: white;
+}
+.navbar-header a{
+	color: white;
+}
+.hh a{
+	width:22px;
+	height:22px;
+	display:block;
+	float:left;
+	line-height:23px;
+	text-align:center;
+	text-decoration:none;
+	
+}
+.c1{
+	float:left;
+	font-size:25px ;
+	color: #FF0;
+	width:300px ;
+	padding:25px 0px 0px 70px;
+	height:50px;
+	text-align: center;
+	line-height:25px;
+	font-style:italic;
+	font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;
+	font-weight:bold;
+	
+}
+	
+

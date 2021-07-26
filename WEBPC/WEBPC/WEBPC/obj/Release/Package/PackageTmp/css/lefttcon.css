@@ -1,0 +1,117 @@
+.leftcon{
+	
+	float:left;
+	
+}
+.box1{
+	
+	height:30px;
+	
+	text-align:center;
+	font-size:13px;
+	font-weight:bold;
+	color:#fff;
+	line-height:30px;
+	background:url(../hinh%20anh/h%C3%ACnh%20n%E1%BB%81n%20hea.jpg);
+}
+.leftmenu{
+	
+	list-style:none;
+	
+}
+.leftmenu li{
+	
+	list-style:none;
+	font-size:20px;
+}
+.no a{
+	
+	
+	height:30px;
+	display:block;
+	background:;
+	text-decoration:none;
+	background: url(../hinh%20anh/bieu%20tuong%20chech.jpg) no-repeat left #CCC;
+	
+
+	padding:5px 0 0 30px;
+}
+.y a{
+	
+	height:30px;
+	display:block;
+	background: url(../hinh%20anh/bieu%20tuong%20chech.jpg) no-repeat left #999;
+	text-decoration:none;
+
+	padding:5px 0 0 30px;
+	
+}
+.y a:hover , .no a:hover{
+	background:url(../hinh%20anh/bieu%20tuong%20chech.jpg) no-repeat left #7bbcc7;
+	color:#fff;
+}
+.kkk{
+	
+	height:auto;
+	text-align:center;
+	border:1px solid #6da6b1;
+}
+.d{
+	color:#ea2222;
+	padding:5px 0;
+	font-weight:bold;
+
+}
+.d a{
+	color:#064E5A;
+	text-decoration:none;
+}
+.d a:hover{
+	color: #0F0;
+}
+.dd{
+	padding:5px 0;
+}
+
+.ddd{
+	padding:5px 0;
+}
+.ff{
+	color:#ea2222;
+}
+.f
+{
+	text-decoration:line-through;
+	color:#999;
+}
+.nhapbantin{
+	width: 100%;
+	height:16px;
+	border:1px solid #dd9d91;
+	font-size:12px;
+	color:#999;
+	margin:10px 0 5px 0;
+	padding:3px;
+}
+a.thamgia{
+	
+	display:block;
+	
+	text-decoration:none;
+	color: #C63;
+	font-size:16px;
+	font-weight:bold;
+	
+}
+.anhbia{
+	
+	text-align:center;
+	padding:0px 0;
+}
+     
+
+	
+
+
+
+

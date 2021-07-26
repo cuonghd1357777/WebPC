@@ -1,0 +1,122 @@
+*{
+	margin: 0px;
+	padding:0px;
+	/* CSS Document */
+}
+.clr {
+	clear:both;
+}
+
+body{
+	
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:11px;
+	
+	
+	
+	
+}
+.dinhdang{
+	height:100px;
+}
+.tendangnhapp{
+	
+}
+.main{
+	width: 1300px;
+	margin:0px auto;
+}
+.top{
+	width:1300px;
+	height:50px;
+	background-color:#FFF
+	
+}
+.ngonngu{
+	float:right;
+	width:200px;
+	padding-top:8px;
+	
+}
+.ngonngu div{
+	float:left;
+	color:#969;
+	padding:0 5px 0 0;
+	font-size:16px;
+	
+	
+	
+}
+.ngonngu a{
+	float:left;
+	display:block;
+	padding:0 5px 0 5px;
+}
+.timkiem{
+	width:400px;
+	height:35px;
+	float:right;
+}
+.timkiem .timkiem1{
+	float:left;
+	font-size:18px;
+	width:110px;
+	padding:8px 0 0px 5px;
+}
+.timkiem .timkiem1 a{
+	text-decoration:none;
+}
+.timkiem .nhap{
+	width:180px;
+	height:18px;
+	margin-top:10px;
+	border:1px solid #00F;
+	width:auto;
+	float:left;
+	margin-left:-25px;
+}
+.timkiem .timkiem2{
+	float:leftt;
+	margin-top:7px;
+	padding-left:10px;
+	
+	
+}
+#submit_search{
+	    height: 40px;
+    border: none;
+    cursor: pointer;
+    float: right;
+    color: #fff;
+    background:url(../hinh%20anh/sea2123.jpg) no-repeat center ;
+    width: 50px;
+    border-left: solid 2px #4a6cad;
+    font-size: 0;
+    outline: none;
+}
+#text_search {
+    width: 370px !important;
+    height: 40px;
+    border: none;
+    background: none;
+    float: left;
+    outline: none;
+    padding: 0 10px;
+}
+#search{
+    width: 470px;
+    height: 40px;
+    float: left;
+    position: relative;
+    margin-right: 6px;
+    background: #ffff;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    margin-top: 3px;
+    margin-left: 500px;
+    border: solid 1px #4a6cad;
+}
+
+	
+

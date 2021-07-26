@@ -1,0 +1,73 @@
+﻿@model WEBPC.Models.khachhang
+
+@{
+    ViewBag.Title = "thongtintaikhoan";
+    Layout = "~/Views/Shared/_LayoutIndex.cshtml";
+}
+
+
+
+<div>
+    <h4>Thông tin khách hàng</h4>
+    <hr />
+   
+    
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayName("Tên khách hàng")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tenkh)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Tên đăng nhập")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tendn)
+        </dd>
+
+
+
+        <dt>
+            @Html.DisplayName("Giới tính")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.gioitinh)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Số điện thoại")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sodienthoai)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Email")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.email)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Địa chỉ")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.diachi)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Quay về trang chủ", "Index")
+    <a href="@Url.Action("Editkh","WEBPC",new {id=Model.makh })" class="btn btn-primary" role="button">Sửa</a>
+
+
+</p>

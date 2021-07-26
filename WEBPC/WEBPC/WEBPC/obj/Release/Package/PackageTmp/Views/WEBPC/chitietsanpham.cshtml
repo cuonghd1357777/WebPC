@@ -1,0 +1,46 @@
+﻿@model WEBPC.Models.sanpham
+@{
+    ViewBag.Title = "chitietsanpham";
+    Layout = "~/Views/Shared/_LayoutIndex.cshtml";
+}
+@Html.Action("leftdanhmuc", "WEBPC")
+
+<div class="col-sm-9 col-md-9 col-lg-9 col-xs-12">
+    <h2 style="text-align:center;">THÔNG TIN SẢN PHẨM</h2>
+    <p style="
+    font-size: 20px;
+    color: blue;text-align:center;
+">Tên sản phẩm: @Model.tensanpham </p>
+<img style="        display: block;
+        margin: auto;
+        width: 200px;
+        height: 200px;
+" src="~/hinh anh/@Model.hinhanh">
+<p style="
+    margin-top: 20px;
+">Mô tả: @Html.Raw(Model.mota.ToString().Replace("\n", "<br>"))</p>
+    @{/*
+    <h4 style="
+        color: darkblue;text-align:center;
+    ">
+        Ngày cập nhật: @Html.FormatValue(@Model.ngaycapnhat, "{0:dd/MM/yyyy}")
+    </h4>
+        */
+    }
+<h3 style="
+    color: red;text-align:center;
+">
+    Giá bán: @Html.FormatValue(@Model.dongia, "{0:#,##0}") VNĐ
+</h3>
+<h4 style="
+    color: maroon;text-align:center;
+">
+    Bảo hành: @Html.DisplayFor(Model=>Model.baohanh)
+</h4>
+<p style="text-align:center;">
+
+    <a href="@Url.Action("themgiohang","GioHang",new {id=Model.masp,Url=Request.Url.ToString() })" class="btn btn-warning" role="button"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Thêm vào giỏ</a>
+</p>
+</div>
+
+

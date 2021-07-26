@@ -1,0 +1,14 @@
+﻿
+@{
+    ViewBag.Title = "formthongke";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@using (Html.BeginForm("formthongke", "Admin", FormMethod.Post))
+{
+    <input type="date" name="ngaylap" value="@DateTime.Now.ToString("yyyy-MM-dd")" />
+    
+    <input style="margin-left:50px;" type="date" name="ngaylapcuoi" value="2017-06-01" />
+    <input type="submit" value="Thống kê" class="btn btn-success" role="button" />
+}
+

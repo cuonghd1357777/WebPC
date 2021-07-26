@@ -1,0 +1,89 @@
+﻿
+@{
+    ViewBag.Title = "Loginn";
+   
+}
+<div style="height:450px" ;>
+    @using (@Html.BeginForm("Loginn", "WEBPC", FormMethod.Post))
+    {
+
+        <center>
+            <table align="center">
+                @if (Request.Cookies["txtdangnhap"] != null && Request.Cookies["txtmatkhau"] != null)
+                {
+                    <tr>
+                        <td colspan="2" align="center"><h2 style="align-items:center">Đăng nhập</h2></td>
+                    </tr>
+                    <tr style="
+    height: 30px;
+    margin-top: 10px;">
+                        <td>Tên đăng nhập: </td>
+                        <td>  @Html.TextBox("txtdangnhap", Request.Cookies["txtdangnhap"].Value)</td>
+                    </tr>
+                    <tr style="
+    height: 30px;
+    margin-top: 10px;">
+                        <td>
+                            Mật khẩu:
+                        </td>
+                        <td>  @Html.Password("txtmatkhau", Request.Cookies["txtmatkhau"].Value)</td>
+                    </tr>
+                    <tr style="margin-top:10px">
+                        <td align="center">
+                            @Html.ActionLink("Đăng kí tài khoản", "dangki", "WEBPC")
+                        </td>
+                        <td align="center">
+                            <input type="submit" id="btndangnhap" value="Đăng nhập" />
+                        </td>
+                    </tr>
+                }
+                else
+                {
+                    <tr>
+                        <td colspan="2" align="center"><h2 style="align-items:center">Đăng nhập</h2></td>
+                    </tr>
+                    <tr style="
+    height: 30px;
+    margin-top: 10px;">
+                        <td>Tên đăng nhập: </td>
+                        <td>  @Html.TextBox("txtdangnhap")</td>
+                    </tr>
+                    <tr style="
+    height: 30px;
+    margin-top: 10px;">
+                        <td>
+                            Mật khẩu:
+                        </td>
+                        <td>  @Html.Password("txtmatkhau")</td>
+                    </tr>
+                    <tr style="margin-top:10px">
+                        <td align="center">
+                            @Html.ActionLink("Đăng kí tài khoản", "dangki", "WEBPC")
+                        </td>
+                        <td align="center">
+                            <input type="submit" id="btndangnhap" value="Đăng nhập" />
+                        </td>
+                    </tr>
+
+                }
+            <tr>
+                <td></td>
+                <td>
+                    @Html.CheckBox("remember")
+                    <span style="font-style:italic">Nhớ thông tin đăng nhập</span>
+                </td>
+            </tr>
+            </table>
+            
+            <label for="error" style="
+    color: red;
+    margin-top: 10px;
+">@ViewBag.error </label>
+</center>
+}
+</div>
+@{ 
+    /*
+    @ViewBag.pb
+    */
+}
